@@ -1,2 +1,16 @@
 hazelcast:
-  cluster-name: hazelcast-cluster
+  cluster-name: auth-hazelcast-cluster
+  network:
+    join:
+      kubernetes:
+        enabled: true
+  cluster:
+    version:
+      auto:
+        upgrade:
+          enabled: true
+  map:
+    cache10sec:
+      time-to-live-seconds: 10
+    cachePersistent:
+      time-to-live-seconds: 0
